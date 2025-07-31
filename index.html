@@ -12,6 +12,7 @@
             --text-color: #333;
             --card-bg: #ffffff;
             --border-radius: 8px;
+            --strong-color: #6341bf;
         }
 
         body {
@@ -112,6 +113,11 @@
             color: #0077cc;
             cursor: pointer;
         }
+        
+        #strong {
+            font-weight: bold;
+            color: var(--strong-color);
+        }
     </style>
 </head>
 
@@ -128,22 +134,96 @@
                     class="email-link">
                     omniknowstudio@google.com</a></p>
 
-            <h2>技能</h2>
+            <!-- <h2>技能</h2>
             <ul>
-                <li>資料分析與視覺化：Power BI、ETL、Web Scraping</li>
+                <li id="strong">資料分析與視覺化：Power BI、ETL、Web Scraping</li>
                 <li>KNX 智慧建築系統整合</li>
                 <li>前端技術：HTML / CSS / JavaScript</li>
                 <li>嵌入式開發：C、Assembly、Python</li>
                 <li>工具與平台：Git、GitHub、Trello</li>
                 <li>通訊協定：UART、I2C、SPI、CAN、Modbus、KNX、Zigbee、GPIB</li>
-            </ul>
+            </ul> -->
+<style>
+  .skill-section {
+    max-width: 600px;
+    margin: 20px 0;
+  }
+
+  .skill {
+    margin-bottom: 15px;
+  }
+
+  .skill-name {
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+
+  .skill-bar {
+    background-color: #eee;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 16px;
+  }
+
+  .skill-level {
+    height: 100%;
+    background-color: var(--primary-color, #007bff);
+    width: 0;
+    transition: width 2s ease-in-out;
+  }
+
+  /* 依照等級分配寬度 */
+  .level-95 { width: 95%; }
+  .level-90 { width: 90%; }
+  .level-85 { width: 85%; }
+  .level-80 { width: 80%; }
+  .level-75 { width: 75%; }
+  .level-70 { width: 70%; }
+  .level-65 { width: 65%; }
+  .level-60 { width: 60%; }
+  .level-50 { width: 50%; }
+</style>
+
+<section class="skill-section">
+  <h2>技能</h2>
+
+  <div class="skill">
+    <div class="skill-name">資料分析與視覺化：Power BI、ETL、Web Scraping</div>
+    <div class="skill-bar"><div class="skill-level level-65"></div></div>
+  </div>
+
+  <div class="skill">
+    <div class="skill-name">KNX 智慧建築系統整合</div>
+    <div class="skill-bar"><div class="skill-level level-90"></div></div>
+  </div>
+
+  <div class="skill">
+    <div class="skill-name">前端技術：HTML / CSS / JavaScript</div>
+    <div class="skill-bar"><div class="skill-level level-65"></div></div>
+  </div>
+
+  <div class="skill">
+    <div class="skill-name">嵌入式開發：C、Assembly、Python</div>
+    <div class="skill-bar"><div class="skill-level level-70"></div></div>
+  </div>
+
+  <div class="skill">
+    <div class="skill-name">工具與平台：Git、GitHub、Trello</div>
+    <div class="skill-bar"><div class="skill-level level-65"></div></div>
+  </div>
+
+  <div class="skill">
+    <div class="skill-name">通訊協定：UART、I2C、SPI、CAN、Modbus、KNX、Zigbee、GPIB</div>
+    <div class="skill-bar"><div class="skill-level level-75"></div></div>
+  </div>
+</section>
 
             <h2>證照</h2>
             <ul>
-                <li>Python 程式設計（預計 2025.08）</li>
-                <li>KNX Basic Course（2024.11）</li>
-                <li>網頁設計丙級（2021.03）</li>
-                <li>儀表電子乙級（2001.08）</li>
+                <li id="strong">Python 程式設計（預計 2025.08）</li>
+                <li id="strong">KNX Basic Course（2024.11）</li>
+                <li id="strong">網頁設計丙級（2021.03）</li>
+                <li id="strong">儀表電子乙級（2001.08）</li>
                 <li>C 級健身教練（2023.05）</li>
                 <li>三等船副執照（2006.08）</li>
                 <li>空手道黑帶二段（2004.07）</li>
@@ -172,8 +252,9 @@
             </div>
 
             <div class="card">
-                <h2>🎯 求職目標</h2>
-                <p>尋求結合嵌入式系統開發與資料分析應用的職位，能參與智慧產品設計、資料整合或系統優化專案。希望發揮自身的技術深度與專案協作經驗，為企業帶來高效、穩定與可持續發展的技術解決方案。</p>
+                <h2>🎓 學歷</h2>
+                <p>國立臺灣海洋大學｜航海系（二技, 2002 - 2005）</p>
+                <p>國立勤益科技大學｜電子工程系（二專, 2000 - 2002）</p>
             </div>
 
             <div class="card">
@@ -202,11 +283,9 @@
             </div>
 
             <div class="card">
-                <h2>🎓 學歷</h2>
-                <p>國立臺灣海洋大學｜航海系（二技, 2002 - 2005）</p>
-                <p>國立勤益科技大學｜電子工程系（二專, 2000 - 2002）</p>
+                <h2>🎯 求職目標</h2>
+                <p>尋求結合嵌入式系統開發與資料分析應用的職位，能參與智慧產品設計、資料整合或系統優化專案。希望發揮自身的技術深度與專案協作經驗，為企業帶來高效、穩定與可持續發展的技術解決方案。</p>
             </div>
-
         </div>
     </div>
 </body>
