@@ -126,7 +126,7 @@
         <!-- Sidebar 左欄 -->
         <div class="sidebar">
             <img id="toggleImage" src="profile.png" alt="個人照片" onclick="swapImage()"
-                style="width: 240px; height: 240px; object-fit: cover; object-position: top; border-radius: 50%; display: block; margin: 0 auto 15px;" />
+                style="width: 240px; height: 240px; object-fit: cover; object-position: top; border-radius: 50%; display: block; margin: 0 auto 15px; transition: border-radius 1s ease, opacity 1s ease;" />
 
 
   <script>
@@ -134,14 +134,27 @@
     const originalSrc = 'profile.png';
     const newSrc = 'about-the-pavilion-master-qrcode-1.png';
 
-    function swapImage() {
-      img.src = newSrc;
-      img.style.borderRadius = '0%';
-      // 5 秒後換回原圖
+function swapImage() {
+      // 淡出 + 換圖片 + 改邊角
+      img.style.opacity = 0;
+
       setTimeout(() => {
-        img.src = originalSrc;
+        img.src = newSrc;
+        img.style.borderRadius = '0%';
+        img.style.opacity = 1;
+      }, 1000); // 等待淡出結束再換圖
+
+      // 5 秒後再換回原圖 + 邊角
+      setTimeout(() => {
+        img.style.opacity = 0;
+
+        setTimeout(() => {
+          img.src = originalSrc;
+          img.style.borderRadius = '50%';
+          img.style.opacity = 1;
+        }, 1000);
       }, 5000);
-    }
+    }    
   </script>                
             <h1>范智軒</h1>
             <p>📞 0912-335-920</p>
