@@ -136,7 +136,7 @@
 
     function swapImage() {
       img.src = newSrc;
-
+      img.style.borderRadius = '0%';
       // 5 秒後換回原圖
       setTimeout(() => {
         img.src = originalSrc;
